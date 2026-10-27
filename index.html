@@ -1,0 +1,455 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seoulmate ♡ | Your K-Drama Universe</title>
+<style>
+:root {
+  --pink:#f5a9c8;
+  --lavender:#e8ddff;
+  --purple:#8661a8;
+  --cream:#fff9fc;
+  --ink:#49394f;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+}
+header {
+  background:white;
+  padding:18px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  flex-wrap:wrap;
+  border-bottom:1px solid #f4e5f0;
+}
+.logo { font-size:26px;font-weight:800;color:#b85d91; }
+nav { display:flex;gap:15px;flex-wrap:wrap; }
+nav a { color:var(--ink);text-decoration:none;font-size:14px; }
+.hero {
+  padding:65px 7%;
+  text-align:center;
+  background:linear-gradient(135deg,#ffe3ef,#eee5ff,#fff5fa);
+}
+.eyebrow {
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:11px;
+  font-weight:800;
+  color:#a04d82;
+}
+h1 {
+  font-family:Georgia,serif;
+  font-size:clamp(40px,7vw,66px);
+  line-height:1.08;
+  margin:17px 0;
+}
+.hero p {
+  max-width:510px;
+  margin:0 auto 25px;
+  line-height:1.8;
+  color:#6c5874;
+}
+.button {
+  display:inline-block;
+  background:#b96c9d;
+  color:white;
+  border:0;
+  border-radius:30px;
+  padding:13px 22px;
+  text-decoration:none;
+  font-weight:750;
+  cursor:pointer;
+}
+section { padding:45px 7%; }
+.section-top { margin-bottom:24px; }
+.section-top h2 {
+  font-family:Georgia,serif;
+  font-size:31px;
+  margin:8px 0;
+}
+.section-top p { color:#806e87;line-height:1.6; }
+.search {
+  width:100%;
+  padding:14px 16px;
+  margin:8px 0 22px;
+  border:1px solid #e6d6e8;
+  border-radius:14px;
+  background:white;
+  font:inherit;
+}
+.cards {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:20px;
+}
+.card {
+  background:white;
+  border:1px solid #f1e5f0;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 5px 18px #6842690c;
+}
+.poster {
+  height:220px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+  background:linear-gradient(145deg,#ffd9e8,#e4d8ff);
+  color:#744b78;
+  font-family:Georgia,serif;
+  font-size:26px;
+  font-weight:bold;
+}
+.poster span {
+  background:#ffffffb8;
+  padding:16px;
+  border-radius:12px;
+}
+.card-body { padding:17px; }
+.card h3 { margin:0 0 8px;font-size:19px; }
+.meta { font-size:12px;color:#9a7298; }
+.description { font-size:14px;line-height:1.6;color:#74667b; }
+.card-actions { display:flex;gap:8px;flex-wrap:wrap; }
+.small-btn {
+  background:#f7eaf5;
+  color:#895480;
+  border:0;
+  border-radius:20px;
+  padding:10px 12px;
+  cursor:pointer;
+  font-weight:700;
+}
+.small-btn.saved { background:#dff3e6;color:#39764f; }
+.rating { color:#bb7b35;font-weight:800; }
+.couple {
+  text-align:center;
+  background:linear-gradient(135deg,#fff0f6,#f0eaff);
+  border-radius:18px;
+  padding:25px 15px;
+}
+.couple .hearts { font-size:34px; }
+.couple h3 { margin:10px 0 5px; }
+.couple p { color:#78677f;font-size:13px; }
+.review-box {
+  background:white;
+  border:1px solid #f1e5f0;
+  border-radius:18px;
+  padding:22px;
+  max-width:650px;
+}
+label { display:block;font-weight:700;margin:15px 0 7px; }
+input,select,textarea {
+  width:100%;
+  border:1px solid #e6d6e8;
+  border-radius:10px;
+  padding:12px;
+  font:inherit;
+  color:var(--ink);
+  background:#fffaff;
+}
+textarea { min-height:90px;resize:vertical; }
+#reviewList { display:grid;gap:12px;margin-top:20px; }
+.review-item { background:#fff4fa;padding:15px;border-radius:12px; }
+#notice { font-size:13px;color:#8a5480;margin-top:12px; }
+footer {
+  background:#f1e6fa;
+  text-align:center;
+  padding:28px 15px;
+  color:#795f83;
+  font-size:13px;
+}
+.empty { color:#806e87;line-height:1.7; }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">♡ Seoulmate</div>
+  <nav>
+    <a href="#dramas">Discover</a>
+    <a href="#couples">Couples</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#watchlist">Watchlist</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="eyebrow">A little corner for K-drama lovers</div>
+    <h1>Your next K-drama<br>obsession starts here.</h1>
+    <p>From butterflies and first love to unforgettable couples, discover your next favourite story. ♡</p>
+    <a class="button" href="#dramas">Find your next drama →</a>
+  </div>
+
+  <section id="dramas">
+    <div class="section-top">
+      <div class="eyebrow">Your next binge</div>
+      <h2>Drama recommendations 🎬</h2>
+      <p>Search dramas by title or genre and save your favourites.</p>
+    </div>
+    <input
+      class="search"
+      id="searchInput"
+      type="search"
+      placeholder="🔍 Search dramas or genres..."
+      aria-label="Search dramas"
+    >
+    <div class="cards" id="dramaCards"></div>
+    <p id="noResults" class="empty" hidden>No dramas found. Try another search! 💗</p>
+  </section>
+
+  <section id="couples">
+    <div class="section-top">
+      <div class="eyebrow">Made for each other?</div>
+      <h2>Couples we adore 💕</h2>
+      <p>For the chemistry, the butterflies, and the moments we replay.</p>
+    </div>
+    <div class="cards">
+      <div class="couple">
+        <div class="hearts">🌸💗🌸</div>
+        <h3>True Beauty</h3>
+        <p>Love triangles and unforgettable feelings</p>
+      </div>
+      <div class="couple">
+        <div class="hearts">☁️💜☁️</div>
+        <h3>Lovely Runner</h3>
+        <p>Fate, devotion, and second chances</p>
+      </div>
+      <div class="couple">
+        <div class="hearts">🌷💕🌷</div>
+        <h3>Extraordinary You</h3>
+        <p>A love story beyond the pages</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="section-top">
+      <div class="eyebrow">Your voice matters</div>
+      <h2>Drama diary 💌</h2>
+      <p>Write a review and rate any drama.</p>
+    </div>
+    <div class="review-box">
+      <form id="reviewForm">
+        <label for="dramaName">Drama title</label>
+        <input id="dramaName" maxlength="100" required placeholder="e.g. True Beauty">
+
+        <label for="stars">Your rating</label>
+        <select id="stars">
+          <option value="5">★★★★★ — 5/5</option>
+          <option value="4">★★★★☆ — 4/5</option>
+          <option value="3">★★★☆☆ — 3/5</option>
+          <option value="2">★★☆☆☆ — 2/5</option>
+          <option value="1">★☆☆☆☆ — 1/5</option>
+        </select>
+
+        <label for="reviewText">Your review</label>
+        <textarea id="reviewText" maxlength="1000" required placeholder="Tell us how it made you feel..."></textarea>
+
+        <button class="button" type="submit">Add my review ♡</button>
+        <div id="notice" role="status"></div>
+      </form>
+      <div id="reviewList"></div>
+    </div>
+  </section>
+
+  <section id="watchlist">
+    <div class="section-top">
+      <div class="eyebrow">Your personal collection</div>
+      <h2>My watchlist 📺</h2>
+      <p>Your saved dramas appear here on this browser.</p>
+    </div>
+    <div id="savedList" class="cards"></div>
+  </section>
+</main>
+
+<footer>
+  Made with ♡ by a K-drama lover · Welcome to Seoulmate 🎀
+</footer>
+
+<script>
+const dramas = [
+  {
+    title:"True Beauty",
+    genre:"Romance · School",
+    emoji:"🌷",
+    description:"A school romance about confidence, friendship, and first love."
+  },
+  {
+    title:"Lovely Runner",
+    genre:"Romance · Fantasy",
+    emoji:"💜",
+    description:"A heartfelt story of fate, music, and travelling through time."
+  },
+  {
+    title:"Extraordinary You",
+    genre:"Romance · Fantasy · School",
+    emoji:"🦋",
+    description:"What if you discovered you were a character in a comic book?"
+  },
+  {
+    title:"Twinkling Watermelon",
+    genre:"Youth · Music · Fantasy",
+    emoji:"🍉",
+    description:"Friendship, music, family, and a journey through time."
+  }
+];
+
+function loadData(key, fallback) {
+  try {
+    const value = localStorage.getItem(key);
+    if (!value) return fallback;
+    const parsed = JSON.parse(value);
+    return Array.isArray(parsed) ? parsed : fallback;
+  } catch (error) {
+    return fallback;
+  }
+}
+
+function saveData(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
+
+let watchlist = loadData("seoulmate-watchlist", []);
+let reviews = loadData("seoulmate-reviews", []);
+
+function safeText(value) {
+  return String(value).replace(/[&<>"']/g, char => ({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#39;"
+  })[char]);
+}
+
+function renderDramas() {
+  const query = document.getElementById("searchInput").value
+    .trim().toLowerCase();
+
+  const filtered = dramas.filter(drama =>
+    (drama.title + " " + drama.genre).toLowerCase().includes(query)
+  );
+
+  document.getElementById("noResults").hidden = filtered.length !== 0;
+
+  document.getElementById("dramaCards").innerHTML = filtered.map(drama => {
+    const saved = watchlist.includes(drama.title);
+    return `
+      <article class="card">
+        <div class="poster" role="img" aria-label="${safeText(drama.title)} decorative artwork">
+          <span>${drama.emoji}<br>${safeText(drama.title)}</span>
+        </div>
+        <div class="card-body">
+          <div class="meta">${safeText(drama.genre)}</div>
+          <h3>${safeText(drama.title)}</h3>
+          <p class="description">${safeText(drama.description)}</p>
+          <div class="card-actions">
+            <button class="small-btn ${saved ? "saved" : ""}"
+              data-title="${safeText(drama.title)}"
+              onclick="toggleWatchlist(this.dataset.title)">
+              ${saved ? "✓ Saved" : "♡ Add to watchlist"}
+            </button>
+          </div>
+        </div>
+      </article>`;
+  }).join("");
+
+  renderWatchlist();
+}
+
+function toggleWatchlist(title) {
+  if (watchlist.includes(title)) {
+    watchlist = watchlist.filter(item => item !== title);
+  } else {
+    watchlist.push(title);
+  }
+
+  const saved = saveData("seoulmate-watchlist", watchlist);
+  renderDramas();
+
+  if (!saved) {
+    alert("Your browser couldn't save the watchlist. It may not persist after you leave this page.");
+  }
+}
+
+function renderWatchlist() {
+  const savedDramas = dramas.filter(drama => watchlist.includes(drama.title));
+  const container = document.getElementById("savedList");
+
+  if (savedDramas.length === 0) {
+    container.innerHTML = '<p class="empty">Your watchlist is waiting for its first drama. Add one above! 💗</p>';
+    return;
+  }
+
+  container.innerHTML = savedDramas.map(drama => `
+    <article class="card">
+      <div class="card-body">
+        <h3>${drama.emoji} ${safeText(drama.title)}</h3>
+        <p class="description">${safeText(drama.genre)}</p>
+        <button class="small-btn"
+          data-title="${safeText(drama.title)}"
+          onclick="toggleWatchlist(this.dataset.title)">Remove</button>
+      </div>
+    </article>
+  `).join("");
+}
+
+function renderReviews() {
+  document.getElementById("reviewList").innerHTML = reviews.map(review => `
+    <article class="review-item">
+      <strong>${safeText(review.title)}</strong>
+      · <span class="rating">${"★".repeat(review.stars)}${"☆".repeat(5-review.stars)}</span>
+      <p>${safeText(review.text)}</p>
+    </article>
+  `).join("");
+}
+
+document.getElementById("searchInput").addEventListener("input", renderDramas);
+
+document.getElementById("reviewForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const title = document.getElementById("dramaName").value.trim();
+  const reviewText = document.getElementById("reviewText").value.trim();
+  const stars = Number(document.getElementById("stars").value);
+
+  if (!title || !reviewText || stars < 1 || stars > 5) return;
+
+  const updatedReviews = [
+    { title, text:reviewText, stars },
+    ...reviews
+  ];
+
+  if (saveData("seoulmate-reviews", updatedReviews)) {
+    reviews = updatedReviews;
+    document.getElementById("notice").textContent = "Review added and saved in this browser! ♡";
+  } else {
+    reviews = updatedReviews;
+    document.getElementById("notice").textContent = "Review added for this session, but browser storage failed. It may not be saved after leaving.";
+  }
+
+  this.reset();
+  renderReviews();
+});
+
+renderDramas();
+renderReviews();
+</script>
+</body>
+</html>
